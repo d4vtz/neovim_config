@@ -1,7 +1,25 @@
 return {
     {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
-        event = "VeryLazy",
+        lazy = true,
+
+        cmd = {
+            "MasonToolsInstall",
+            "MasonToolsInstallSync",
+            "MasonToolsUpdate",
+            "MasonToolsUpdateSync",
+            "MasonToolsClean",
+        },
+
+        init = function()
+            vim.defer_fn(function()
+                require("lazy").load({
+                    plugins = {
+                        "mason-tool-installer.nvim",
+                    },
+                })
+            end, 3000)
+        end,
 
         dependencies = {
             "mason-org/mason.nvim",
@@ -16,7 +34,7 @@ return {
 
             auto_update = false,
             run_on_start = true,
-            start_delay = 3000,
+            start_delay = 0,
             debounce_hours = 24,
 
             integrations = {
