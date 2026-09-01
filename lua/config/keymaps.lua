@@ -23,12 +23,6 @@ map("n", "<leader>rc", "<cmd>ReloadConfig<CR>", {
 	desc = "Recargar configuración",
 })
 
-map("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>")
-map("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>")
-
-map("n", "<leader>bp", "<cmd>BufferLinePick<cr>")
-map("n", "<leader>bd", "<cmd>bdelete<cr>")
-
 map("t", "<Esc><Esc>", [[<C-\><C-n>]], {
 	desc = "Salir del modo terminal",
 })
@@ -48,15 +42,14 @@ map("t", "<C-l>", [[<C-\><C-n><C-w>l]], {
 	desc = "Mover a ventana derecha",
 })
 
+local lsp_group = vim.api.nvim_create_augroup("UserLspConfig", {
+	clear = true,
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
-	group = group,
+	group = lsp_group,
 
 	callback = function(event)
-		vim.keymap.set("n", "<leader>cl", function()
-			require("lint").try_lint()
-		end, {
-			desc = "Ejecutar linter",
-		})
 		local function lsp_map(lhs, rhs, desc)
 			vim.keymap.set("n", lhs, rhs, {
 				buffer = event.buf,
