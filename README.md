@@ -50,6 +50,8 @@ Linters instalados automáticamente mediante Mason:
 
 LaTeX utiliza el `latexindent` proporcionado por TeX Live. También requiere `latexmk` para compilar y `zathura` para la búsqueda inversa. Los servidores de lenguaje y el resto de los formateadores se administran desde `:Mason`.
 
+Mason comprueba las herramientas declaradas tres segundos después del inicio y, como máximo, una vez por semana. Las sesiones headless omiten esta comprobación automática.
+
 ## Estructura
 
 ```text
