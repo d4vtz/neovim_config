@@ -29,6 +29,7 @@ return {
 				{ "<leader>n", group = "Notificaciones" },
 				{ "<leader>q", group = "Salir y sesiones" },
 				{ "<leader>r", group = "Refactor y configuración" },
+				{ "<leader>s", group = "Intercambiar" },
 				{ "<leader>t", group = "Terminal" },
 				{ "<leader>x", group = "Diagnósticos" },
 			},
