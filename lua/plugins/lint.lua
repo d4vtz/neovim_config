@@ -7,6 +7,16 @@ return {
 			"BufNewFile",
 		},
 
+		keys = {
+			{
+				"<leader>cl",
+				function()
+					require("lint").try_lint()
+				end,
+				desc = "Ejecutar linter",
+			},
+		},
+
 		config = function()
 			local lint = require("lint")
 
