@@ -12,7 +12,6 @@ return {
                 "stylua",
                 "ruff",
                 "clang-format",
-                "latexindent",
             },
 
             auto_update = false,
