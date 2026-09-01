@@ -28,9 +28,11 @@ En el primer inicio, `lazy.nvim` se instalará automáticamente.
 
 Dependencias generales:
 
-- Neovim
+- Neovim 0.12 o posterior
 - Git
 - `make`, para compilar `telescope-fzf-native`
+- `tree-sitter-cli` 0.26.1 o posterior
+- un compilador de C para los parsers de Treesitter
 - una Nerd Font
 - `ripgrep` y `fd`, recomendados para Telescope
 
@@ -62,7 +64,7 @@ consultar los grupos disponibles.
 | `<leader>ff` | Buscar archivos |
 | `<leader>fg` | Buscar texto |
 | `<leader>e` | Abrir o cerrar Neo-tree |
-| `<leader>f` | Formatear el buffer |
+| `<leader>cf` | Formatear el buffer |
 | `<leader>cl` | Ejecutar el linter |
 | `<leader>xx` | Mostrar diagnósticos |
 | `<C-\\>` | Abrir una terminal flotante |
@@ -72,6 +74,7 @@ consultar los grupos disponibles.
 
 - `:Lazy`: administrar y actualizar plugins.
 - `:Mason`: administrar servidores LSP.
+- `:TSUpdate`: actualizar los parsers de Treesitter.
 - `:ConformInfo`: inspeccionar los formateadores disponibles.
 - `:ReloadConfig`: recargar parcialmente los módulos principales.
 
