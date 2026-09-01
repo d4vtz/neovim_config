@@ -1,3 +1,15 @@
+local function format_buffer()
+	if vim.b.bigfile then
+		vim.notify("El formato está desactivado para archivos grandes", vim.log.levels.WARN)
+		return
+	end
+
+	require("conform").format({
+		async = true,
+		lsp_format = "fallback",
+	})
+end
+
 return {
 	{
 		"stevearc/conform.nvim",
@@ -13,12 +25,7 @@ return {
 		keys = {
 			{
 				"<leader>cf",
-				function()
-					require("conform").format({
-						async = true,
-						lsp_format = "fallback",
-					})
-				end,
+				format_buffer,
 				desc = "Formatear buffer",
 			},
 		},
@@ -45,6 +52,7 @@ return {
 					"latexindent",
 				},
 			},
+
 			formatters = {
 				latexindent = {
 					prepend_args = {
@@ -53,10 +61,16 @@ return {
 				},
 			},
 
-			format_on_save = {
-				timeout_ms = 1000,
-				lsp_format = "fallback",
-			},
+			format_on_save = function(buffer)
+				if vim.b[buffer].bigfile then
+					return
+				end
+
+				return {
+					timeout_ms = 1000,
+					lsp_format = "fallback",
+				}
+			end,
 		},
 	},
 }
