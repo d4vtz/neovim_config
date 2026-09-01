@@ -12,6 +12,9 @@ return {
 			{ "<S-l>", "<cmd>BufferLineCycleNext<CR>", desc = "Buffer siguiente" },
 			{ "<leader>bp", "<cmd>BufferLinePick<CR>", desc = "Elegir buffer" },
 			{ "<leader>bd", "<cmd>bdelete<CR>", desc = "Cerrar buffer" },
+			{ "<leader>bo", "<cmd>BufferLineCloseOthers<CR>", desc = "Cerrar otros buffers" },
+			{ "<leader>br", "<cmd>BufferLineCloseRight<CR>", desc = "Cerrar buffers a la derecha" },
+			{ "<leader>bl", "<cmd>BufferLineCloseLeft<CR>", desc = "Cerrar buffers a la izquierda" },
 		},
 
 		opts = {
@@ -19,8 +22,12 @@ return {
 				mode = "buffers",
 				numbers = "none",
 
-				close_command = "bdelete! %d",
-				right_mouse_command = "bdelete! %d",
+				close_command = function(buffer)
+					vim.api.nvim_buf_delete(buffer, { force = false })
+				end,
+				right_mouse_command = function(buffer)
+					vim.api.nvim_buf_delete(buffer, { force = false })
+				end,
 
 				left_trunc_marker = "",
 				right_trunc_marker = "",
@@ -31,6 +38,12 @@ return {
 				tab_size = 18,
 
 				diagnostics = "nvim_lsp",
+				diagnostics_indicator = function(count, level)
+					local icon = level:match("error") and " "
+						or level:match("warning") and " "
+						or " "
+					return " " .. icon .. count
+				end,
 
 				diagnostics_update_in_insert = false,
 
