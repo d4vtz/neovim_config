@@ -2,7 +2,27 @@ return {
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
-        lazy = false,
+
+        init = function()
+            local group = vim.api.nvim_create_augroup("UserNeoTreeStartup", {
+                clear = true,
+            })
+
+            vim.api.nvim_create_autocmd("BufEnter", {
+                group = group,
+                once = true,
+                callback = function(args)
+                    local path = vim.api.nvim_buf_get_name(args.buf)
+                    local stat = vim.uv.fs_stat(path)
+
+                    if stat and stat.type == "directory" then
+                        vim.schedule(function()
+                            vim.cmd("Neotree current dir=" .. vim.fn.fnameescape(path))
+                        end)
+                    end
+                end,
+            })
+        end,
 
         dependencies = {
             "nvim-lua/plenary.nvim",
