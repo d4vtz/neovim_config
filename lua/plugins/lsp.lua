@@ -19,6 +19,15 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"basedpyright",
+				"ruff",
+				"clangd",
+				"bashls",
+				"texlab",
+			},
+			automatic_enable = {
+				"lua_ls",
+				"basedpyright",
+				"ruff",
 				"clangd",
 				"bashls",
 				"texlab",
@@ -118,7 +127,6 @@ return {
 				},
 			})
 
-			vim.lsp.enable("lua_ls")
 		end,
 	},
 }
