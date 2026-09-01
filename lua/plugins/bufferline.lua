@@ -7,6 +7,13 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 
+		keys = {
+			{ "<S-h>", "<cmd>BufferLineCyclePrev<CR>", desc = "Buffer anterior" },
+			{ "<S-l>", "<cmd>BufferLineCycleNext<CR>", desc = "Buffer siguiente" },
+			{ "<leader>bp", "<cmd>BufferLinePick<CR>", desc = "Elegir buffer" },
+			{ "<leader>bd", "<cmd>bdelete<CR>", desc = "Cerrar buffer" },
+		},
+
 		opts = {
 			options = {
 				mode = "buffers",
