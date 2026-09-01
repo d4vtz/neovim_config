@@ -9,7 +9,7 @@ return {
 
 		opts = {
 			options = {
-				theme = "auto",
+				theme = "dracula-nvim",
 				globalstatus = true,
 				disabled_filetypes = {
 					statusline = { "dashboard", "alpha", "starter", "neo-tree" },
