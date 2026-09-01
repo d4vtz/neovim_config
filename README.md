@@ -69,6 +69,12 @@ consultar los grupos disponibles.
 | `<leader>er` | Revelar el archivo actual en Neo-tree |
 | `<leader>cf` | Formatear el buffer |
 | `<leader>xx` | Mostrar diagnósticos |
+| `<leader>xX` | Mostrar diagnósticos del buffer actual |
+| `<leader>xe` | Mostrar solamente errores |
+| `<leader>xs` | Mostrar símbolos del documento |
+| `<leader>xl` | Mostrar definiciones y referencias LSP |
+| `<leader>xQ` | Mostrar la lista quickfix |
+| `<leader>xL` | Mostrar la location list |
 | `<C-\\>` | Abrir una terminal flotante |
 | `<leader>th` | Abrir una terminal horizontal |
 | `<leader>tv` | Abrir una terminal vertical |
