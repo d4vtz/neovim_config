@@ -20,6 +20,21 @@ return {
 					WinSeparator = {
 						fg = colors.selection,
 					},
+					SnacksDashboardHeader = {
+						fg = colors.purple,
+					},
+					SnacksDashboardIcon = {
+						fg = colors.cyan,
+					},
+					SnacksDashboardKey = {
+						fg = colors.pink,
+					},
+					SnacksDashboardDesc = {
+						fg = colors.fg,
+					},
+					SnacksDashboardFooter = {
+						fg = colors.comment,
+					},
 				}
 			end,
 		},
