@@ -1,3 +1,19 @@
+local parsers = {
+    "bash",
+    "c",
+    "cpp",
+    "json",
+    "latex",
+    "lua",
+    "markdown",
+    "markdown_inline",
+    "python",
+    "toml",
+    "vim",
+    "vimdoc",
+    "yaml",
+}
+
 return {
     {
         "nvim-treesitter/nvim-treesitter",
@@ -5,38 +21,18 @@ return {
         lazy = false,
         build = ":TSUpdate",
 
-        opts = {
-            ensure_installed = {
-                "bash",
-                "c",
-                "cpp",
-                "json",
-                "latex",
-                "lua",
-                "markdown",
-                "markdown_inline",
-                "python",
-                "toml",
-                "vim",
-                "vimdoc",
-                "yaml",
-            },
+        config = function()
+            local treesitter = require("nvim-treesitter")
 
-            auto_install = true,
+            treesitter.setup()
+            treesitter.install(parsers)
 
-            highlight = {
-                enable = true,
-            },
-
-            indent = {
-                enable = true,
-            },
-        },
-
-        config = function(_, opts)
-            require("nvim-treesitter").setup(opts)
+            local group = vim.api.nvim_create_augroup("UserTreesitter", {
+                clear = true,
+            })
 
             vim.api.nvim_create_autocmd("FileType", {
+                group = group,
                 callback = function()
                     pcall(vim.treesitter.start)
                 end,
