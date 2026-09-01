@@ -1,3 +1,7 @@
+local function confirm_reset(message)
+	return vim.fn.confirm(message, "&Sí\n&No", 2) == 1
+end
+
 return {
 	{
 		"lewis6991/gitsigns.nvim",
@@ -30,22 +34,22 @@ return {
 
 			signs_staged = {
 				add = {
-					text = "┃",
+					text = "┋",
 				},
 				change = {
-					text = "┃",
+					text = "┋",
 				},
 				delete = {
-					text = "_",
+					text = "▁",
 				},
 				topdelete = {
-					text = "‾",
+					text = "▔",
 				},
 				changedelete = {
-					text = "~",
+					text = "≋",
 				},
 				untracked = {
-					text = "┆",
+					text = "┊",
 				},
 			},
 
@@ -55,10 +59,18 @@ return {
 			word_diff = false,
 
 			current_line_blame = false,
+			current_line_blame_opts = {
+				delay = 500,
+				virt_text_pos = "eol",
+				ignore_whitespace = true,
+			},
 
 			preview_config = {
 				border = "rounded",
 			},
+
+			update_debounce = 100,
+			max_file_length = 40000,
 
 			on_attach = function(buffer)
 				local gs = require("gitsigns")
@@ -89,7 +101,7 @@ return {
 				end, "Hunk anterior")
 
 				map("n", "<leader>hs", gs.stage_hunk, "Stage hunk")
-				map("n", "<leader>hr", gs.reset_hunk, "Reset hunk")
+				map("n", "<leader>hu", gs.undo_stage_hunk, "Deshacer stage del hunk")
 
 				map("v", "<leader>hs", function()
 					gs.stage_hunk({
@@ -98,30 +110,42 @@ return {
 					})
 				end, "Stage hunk")
 
+				map("n", "<leader>hr", function()
+					if confirm_reset("¿Descartar los cambios de este hunk?") then
+						gs.reset_hunk()
+					end
+				end, "Descartar hunk")
+
 				map("v", "<leader>hr", function()
-					gs.reset_hunk({
-						vim.fn.line("."),
-						vim.fn.line("v"),
-					})
-				end, "Reset hunk")
+					if confirm_reset("¿Descartar los cambios seleccionados?") then
+						gs.reset_hunk({
+							vim.fn.line("."),
+							vim.fn.line("v"),
+						})
+					end
+				end, "Descartar hunk")
 
 				map("n", "<leader>hS", gs.stage_buffer, "Stage buffer")
-				map("n", "<leader>hR", gs.reset_buffer, "Reset buffer")
+				map("n", "<leader>hR", function()
+					if confirm_reset("¿Descartar todos los cambios del buffer?") then
+						gs.reset_buffer()
+					end
+				end, "Descartar cambios del buffer")
 
 				map("n", "<leader>hp", gs.preview_hunk, "Previsualizar hunk")
-				map("n", "<leader>hi", gs.preview_hunk_inline, "Preview inline")
+				map("n", "<leader>hi", gs.preview_hunk_inline, "Previsualizar hunk inline")
 
 				map("n", "<leader>hb", function()
-					gs.blame_line({
-						full = true,
-					})
-				end, "Git blame")
+					gs.blame_line({ full = true })
+				end, "Git blame de la línea")
 
-				map("n", "<leader>hd", gs.diffthis, "Git diff")
+				map("n", "<leader>hB", gs.toggle_current_line_blame, "Alternar blame de línea")
+				map("n", "<leader>ht", gs.toggle_deleted, "Alternar líneas eliminadas")
 
+				map("n", "<leader>hd", gs.diffthis, "Diff contra el índice")
 				map("n", "<leader>hD", function()
-					gs.diffthis("~")
-				end, "Git diff HEAD")
+					gs.diffthis("HEAD")
+				end, "Diff contra HEAD")
 
 				map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Seleccionar hunk")
 			end,
