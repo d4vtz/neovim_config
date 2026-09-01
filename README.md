@@ -36,14 +36,14 @@ Dependencias generales:
 - una Nerd Font
 - `ripgrep` y `fd`, recomendados para Telescope
 
-Herramientas externas según el lenguaje:
+Formateadores instalados automáticamente mediante Mason:
 
 - Lua: `stylua`
 - Python: `ruff`
 - C y C++: `clang-format`
-- LaTeX: `latexmk`, `latexindent` y `zathura`
+- LaTeX: `latexindent`
 
-Los servidores de lenguaje se administran desde `:Mason`.
+LaTeX también requiere `latexmk` para compilar y `zathura` para la búsqueda inversa. Los servidores de lenguaje y formateadores se administran desde `:Mason`.
 
 ## Estructura
 
@@ -72,7 +72,9 @@ consultar los grupos disponibles.
 ## Mantenimiento
 
 - `:Lazy`: administrar y actualizar plugins.
-- `:Mason`: administrar servidores LSP.
+- `:Mason`: administrar servidores LSP y herramientas.
+- `:MasonToolsInstall`: instalar las herramientas declaradas que falten.
+- `:MasonToolsUpdate`: actualizar las herramientas declaradas.
 - `:TSUpdate`: actualizar los parsers de Treesitter.
 - `:ConformInfo`: inspeccionar los formateadores disponibles.
 - `:ReloadConfig`: recargar parcialmente los módulos principales.
