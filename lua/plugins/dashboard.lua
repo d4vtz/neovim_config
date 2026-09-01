@@ -1,12 +1,73 @@
 local header = [[
- _   _                 _
-| \ | | ___  _____   _(_)_ __ ___
-|  \| |/ _ \/ _ \ \ / / | '_ ` _ \
-| |\  |  __/ (_) \ V /| | | | | | |
-|_| \_|\___|\___/ \_/ |_|_| |_| |_|
-
-             N  E  O  V  I  M
+███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
 ]]
+
+local quotes = {
+	{
+		text = "La naturaleza está escrita en lenguaje matemático.",
+		author = "Galileo Galilei",
+	},
+	{
+		text = "Lo que no puedo crear, no lo entiendo.",
+		author = "Richard Feynman",
+	},
+	{
+		text = "Las matemáticas son la música de la razón.",
+		author = "James Joseph Sylvester",
+	},
+	{
+		text = "Enseñar no es transferir conocimiento, sino crear posibilidades para producirlo.",
+		author = "Paulo Freire",
+	},
+	{
+		text = "Si he visto más lejos es porque estoy sobre hombros de gigantes.",
+		author = "Isaac Newton",
+	},
+	{
+		text = "El arte de enseñar es el arte de ayudar a descubrir.",
+		author = "Mark Van Doren",
+	},
+	{
+		text = "Un maestro afecta la eternidad; nunca sabe dónde termina su influencia.",
+		author = "Henry Adams",
+	},
+	{
+		text = "La ciencia es una forma de pensar, mucho más que un cuerpo de conocimientos.",
+		author = "Carl Sagan",
+	},
+}
+
+local function quote_section()
+	local index = tonumber(vim.uv.hrtime() % #quotes) + 1
+	local quote = quotes[index]
+
+	return {
+		{
+			text = {
+				{
+					"“" .. quote.text .. "”",
+					hl = "footer",
+					align = "center",
+				},
+			},
+			padding = { 2, 0 },
+		},
+		{
+			text = {
+				{
+					"— " .. quote.author,
+					hl = "footer",
+					align = "center",
+				},
+			},
+		},
+	}
+end
 
 return {
 	{
@@ -91,6 +152,7 @@ return {
 						padding = 1,
 					},
 					{ section = "startup" },
+					quote_section,
 				},
 			},
 		},
