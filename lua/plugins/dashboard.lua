@@ -79,7 +79,7 @@ local function quote_section()
 					align = "center",
 				},
 			},
-			padding = { 3, 0 },
+			padding = 0,
 		},
 		{
 			text = {
@@ -176,6 +176,7 @@ return {
 						padding = 1,
 					},
 					{ section = "startup" },
+					{ text = { { " " } } },
 					quote_section,
 				},
 			},
