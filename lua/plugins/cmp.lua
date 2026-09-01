@@ -48,11 +48,17 @@ return {
                 },
 
                 ["<C-k>"] = {
+                    "show_signature",
+                    "hide_signature",
+                    "fallback",
+                },
+
+                ["<C-b>"] = {
                     "scroll_documentation_up",
                     "fallback",
                 },
 
-                ["<C-j>"] = {
+                ["<C-f>"] = {
                     "scroll_documentation_down",
                     "fallback",
                 },
@@ -63,6 +69,13 @@ return {
             },
 
             completion = {
+                list = {
+                    selection = {
+                        preselect = false,
+                        auto_insert = true,
+                    },
+                },
+
                 documentation = {
                     auto_show = true,
                     auto_show_delay_ms = 200,
@@ -93,6 +106,10 @@ return {
 
             snippets = {
                 preset = "default",
+            },
+
+            signature = {
+                enabled = true,
             },
 
             fuzzy = {
