@@ -42,6 +42,11 @@ Formateadores instalados automáticamente mediante Mason:
 - Python: `ruff`
 - C y C++: `clang-format`
 
+Linters instalados automáticamente mediante Mason:
+
+- Bash y shell: `shellcheck`
+- LaTeX: `chktex`
+
 LaTeX utiliza el `latexindent` proporcionado por TeX Live. También requiere `latexmk` para compilar y `zathura` para la búsqueda inversa. Los servidores de lenguaje y el resto de los formateadores se administran desde `:Mason`.
 
 ## Estructura
@@ -68,6 +73,7 @@ consultar los grupos disponibles.
 | `<leader>ee` | Abrir o cerrar Neo-tree |
 | `<leader>er` | Revelar el archivo actual en Neo-tree |
 | `<leader>cf` | Formatear el buffer |
+| `<leader>cl` | Ejecutar el linter del buffer |
 | `<leader>w` | Guardar el archivo |
 | `<leader>qq` | Salir |
 | `<leader>qw` | Guardar y salir |
