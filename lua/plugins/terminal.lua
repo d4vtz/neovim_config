@@ -40,11 +40,11 @@ return {
 		opts = {
 			size = function(terminal)
 				if terminal.direction == "horizontal" then
-					return math.max(12, math.floor(vim.o.lines * 0.3))
+					return math.max(1, math.min(vim.o.lines - 4, math.max(12, math.floor(vim.o.lines * 0.3))))
 				end
 
 				if terminal.direction == "vertical" then
-					return math.max(40, math.floor(vim.o.columns * 0.4))
+					return math.max(1, math.min(vim.o.columns - 4, math.max(40, math.floor(vim.o.columns * 0.4))))
 				end
 			end,
 
@@ -69,10 +69,10 @@ return {
 			float_opts = {
 				border = "rounded",
 				width = function()
-					return math.max(60, math.floor(vim.o.columns * 0.8))
+					return math.max(1, math.min(vim.o.columns - 4, math.max(60, math.floor(vim.o.columns * 0.8))))
 				end,
 				height = function()
-					return math.max(15, math.floor(vim.o.lines * 0.8))
+					return math.max(1, math.min(vim.o.lines - 4, math.max(15, math.floor(vim.o.lines * 0.8))))
 				end,
 				winblend = 0,
 				title_pos = "center",
@@ -81,7 +81,7 @@ return {
 			winbar = {
 				enabled = true,
 				name_formatter = function(terminal)
-					return string.format(" Terminal %d: %s ", terminal.id, terminal.name)
+					return string.format(" Terminal %d: %s ", terminal.id, terminal.name or vim.o.shell)
 				end,
 			},
 
