@@ -5,8 +5,8 @@ return {
 
 		opts = {
 			preset = "modern",
-
-			delay = 300,
+			delay = 250,
+			expand = 1,
 
 			icons = {
 				breadcrumb = "»",
@@ -21,13 +21,16 @@ return {
 			spec = {
 				{ "<leader>b", group = "Buffers" },
 				{ "<leader>c", group = "Código" },
-				{ "<leader>f", group = "Buscar / Formato" },
-				{ "<leader>h", group = "Git hunks" },
-				{ "<leader>r", group = "Refactor / Config" },
-				{ "<leader>t", group = "Terminal" },
-				{ "<leader>q", group = "Sesión" },
+				{ "<leader>d", group = "Símbolos y tipos" },
+				{ "<leader>e", group = "Explorador" },
+				{ "<leader>f", group = "Buscar" },
+				{ "<leader>h", group = "Cambios Git" },
 				{ "<leader>l", group = "LaTeX" },
-				{ "<leader>x", group = "Trouble" },
+				{ "<leader>n", group = "Notificaciones" },
+				{ "<leader>q", group = "Salir y sesiones" },
+				{ "<leader>r", group = "Refactor y configuración" },
+				{ "<leader>t", group = "Terminal" },
+				{ "<leader>x", group = "Diagnósticos" },
 			},
 		},
 	},
