@@ -23,9 +23,17 @@
     "branch": "main",
     "commit": "5be654f2232c10ddcad19c1607a67b6b4b78fc29"
   },
+  "guess-indent.nvim": {
+    "branch": "main",
+    "commit": "84a4987ff36798c2fc1169cbaff67960aed9776f"
+  },
   "lazy.nvim": {
     "branch": "main",
     "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97"
+  },
+  "lazydev.nvim": {
+    "branch": "main",
+    "commit": "ff2cbcba459b637ec3fd165a2be59b7bbaeedf0d"
   },
   "lualine.nvim": {
     "branch": "master",
@@ -51,6 +59,14 @@
     "branch": "main",
     "commit": "10fc361835c856ba4233ef5ea135b919bf3dce97"
   },
+  "nvim-autopairs": {
+    "branch": "master",
+    "commit": "430522f95fe4fb7c511ec64f8c1a90cc6a66c05c"
+  },
+  "nvim-highlight-colors": {
+    "branch": "main",
+    "commit": "e4c7af0211866162d999ce0bdd6a029302e19139"
+  },
   "nvim-lint": {
     "branch": "master",
     "commit": "3d55c8f67c6ae5c15e1042571e107c7a3d5c5f4e"
@@ -67,6 +83,10 @@
     "branch": "main",
     "commit": "19071296d3d643b48615ee574a20e8a03ac40872"
   },
+  "nvim-treesitter-textobjects": {
+    "branch": "main",
+    "commit": "898ee307df58f854d11cd7edd06472574d48014e"
+  },
   "nvim-web-devicons": {
     "branch": "master",
     "commit": "5f032a85be210cd1c6ac98861eb3b187ff3bd5eb"
@@ -78,6 +98,10 @@
   "plenary.nvim": {
     "branch": "master",
     "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b"
+  },
+  "snacks.nvim": {
+    "branch": "main",
+    "commit": "882c996cf28183f4d63640de0b4c02ec886d01f2"
   },
   "telescope-fzf-native.nvim": {
     "branch": "main",
