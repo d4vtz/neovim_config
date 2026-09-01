@@ -76,6 +76,8 @@ consultar los grupos disponibles.
 | `<leader>bo` | Cerrar los demás buffers |
 | `<leader>br` | Cerrar buffers a la derecha |
 | `<leader>bl` | Cerrar buffers a la izquierda |
+| `<leader>nd` | Descartar notificaciones |
+| `<leader>nh` | Abrir el historial de notificaciones |
 
 ## Mantenimiento
 
