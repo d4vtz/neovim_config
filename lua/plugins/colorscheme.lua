@@ -41,7 +41,7 @@ return {
 						bold = true,
 					},
 					SnacksDashboardTitle = {
-						fg = colors.cyan,
+						fg = colors.purple,
 						bold = true,
 					},
 					SnacksDashboardFooter = {
