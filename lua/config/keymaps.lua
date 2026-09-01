@@ -15,9 +15,15 @@ map("n", "<C-Down>", "<cmd>resize -2<CR>")
 map("n", "<C-Left>", "<cmd>vertical resize -2<CR>")
 map("n", "<C-Right>", "<cmd>vertical resize +2<CR>")
 
-map("n", "<leader>w", "<cmd>write<CR>")
-map("n", "<leader>q", "<cmd>quit<CR>")
-map("n", "<leader>x", "<cmd>x<CR>")
+map("n", "<leader>w", "<cmd>write<CR>", {
+	desc = "Guardar archivo",
+})
+map("n", "<leader>qq", "<cmd>quit<CR>", {
+	desc = "Salir",
+})
+map("n", "<leader>qw", "<cmd>x<CR>", {
+	desc = "Guardar y salir",
+})
 
 map("n", "<leader>rc", "<cmd>ReloadConfig<CR>", {
 	desc = "Recargar configuración",
@@ -29,15 +35,12 @@ map("t", "<Esc><Esc>", [[<C-\><C-n>]], {
 map("t", "<C-h>", [[<C-\><C-n><C-w>h]], {
 	desc = "Mover a ventana izquierda",
 })
-
 map("t", "<C-j>", [[<C-\><C-n><C-w>j]], {
 	desc = "Mover a ventana inferior",
 })
-
 map("t", "<C-k>", [[<C-\><C-n><C-w>k]], {
 	desc = "Mover a ventana superior",
 })
-
 map("t", "<C-l>", [[<C-\><C-n><C-w>l]], {
 	desc = "Mover a ventana derecha",
 })
@@ -67,7 +70,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			lsp_map("<leader>lk", "<cmd>LspTexlabCleanArtifacts<CR>", "Limpiar archivos auxiliares")
 			lsp_map("<leader>lK", "<cmd>LspTexlabCleanAuxiliary<CR>", "Limpiar archivos auxiliares adicionales")
 		end
-		-- Navegación con Telescope
+
 		lsp_map("gd", function()
 			require("telescope.builtin").lsp_definitions()
 		end, "Ir a definición")
@@ -80,28 +83,25 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			require("telescope.builtin").lsp_implementations()
 		end, "Ir a implementación")
 
-		-- Navegación LSP nativa
 		lsp_map("gD", vim.lsp.buf.declaration, "Ir a declaración")
 
-		lsp_map("<leader>D", function()
+		lsp_map("<leader>dt", function()
 			require("telescope.builtin").lsp_type_definitions()
 		end, "Definición de tipo")
 
-		-- Información
 		lsp_map("K", vim.lsp.buf.hover, "Mostrar documentación")
 
-		-- Código
 		lsp_map("<leader>rn", vim.lsp.buf.rename, "Renombrar")
 		lsp_map("<leader>ca", vim.lsp.buf.code_action, "Acciones de código")
 
-		-- Símbolos
 		lsp_map("<leader>ds", function()
 			require("telescope.builtin").lsp_document_symbols()
 		end, "Símbolos del documento")
 
-		lsp_map("<leader>ws", function()
+		lsp_map("<leader>dS", function()
 			require("telescope.builtin").lsp_dynamic_workspace_symbols()
 		end, "Símbolos del workspace")
+
 		vim.keymap.set("n", "[d", function()
 			vim.diagnostic.jump({
 				count = -1,
