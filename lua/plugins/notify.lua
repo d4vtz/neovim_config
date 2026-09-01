@@ -22,7 +22,7 @@ return {
 		opts = {
 			stages = "fade_in_slide_out",
 			timeout = 2000,
-			background_colour = "#000000",
+			background_colour = "#282A36",
 			render = "compact",
 			top_down = false,
 			max_width = function()
