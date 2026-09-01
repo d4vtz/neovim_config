@@ -9,7 +9,7 @@ Configuración personal de Neovim, modular y administrada con
 - Autocompletado con Blink.
 - Búsqueda con Telescope.
 - Resaltado y análisis sintáctico con Treesitter.
-- Formato con Conform y linting con `nvim-lint`.
+- Formato con Conform y análisis de Python mediante Ruff LSP.
 - Integración con Git mediante Gitsigns.
 - Soporte configurado para Lua, Python, C, C++, Bash y LaTeX.
 
@@ -65,7 +65,6 @@ consultar los grupos disponibles.
 | `<leader>fg` | Buscar texto |
 | `<leader>e` | Abrir o cerrar Neo-tree |
 | `<leader>cf` | Formatear el buffer |
-| `<leader>cl` | Ejecutar el linter |
 | `<leader>xx` | Mostrar diagnósticos |
 | `<C-\\>` | Abrir una terminal flotante |
 | `<S-h>` / `<S-l>` | Buffer anterior / siguiente |
