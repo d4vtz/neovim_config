@@ -41,9 +41,8 @@ Formateadores instalados automáticamente mediante Mason:
 - Lua: `stylua`
 - Python: `ruff`
 - C y C++: `clang-format`
-- LaTeX: `latexindent`
 
-LaTeX también requiere `latexmk` para compilar y `zathura` para la búsqueda inversa. Los servidores de lenguaje y formateadores se administran desde `:Mason`.
+LaTeX utiliza el `latexindent` proporcionado por TeX Live. También requiere `latexmk` para compilar y `zathura` para la búsqueda inversa. Los servidores de lenguaje y el resto de los formateadores se administran desde `:Mason`.
 
 ## Estructura
 
