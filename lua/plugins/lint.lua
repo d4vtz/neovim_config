@@ -17,7 +17,7 @@ local function available_linters()
 end
 
 local function lint_buffer(notify_missing)
-	if vim.bo.buftype ~= "" then
+	if vim.bo.buftype ~= "" or vim.b.bigfile then
 		return
 	end
 
