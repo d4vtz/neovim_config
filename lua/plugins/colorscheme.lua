@@ -1,41 +1,32 @@
 return {
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
+		"Mofiqul/dracula.nvim",
+		name = "dracula",
 		lazy = false,
 		priority = 1000,
 
 		opts = {
-			flavour = "macchiato",
-			integrations = {
-				trouble = true,
-				notify = true,
-				gitsigns = true,
-				telescope = true,
-				neo_tree = true,
-				treesitter = true,
-				bufferline = true,
-				native_lsp = {
-					enabled = true,
-					virtual_text = {
-						errors = { "italic" },
-						hints = { "italic" },
-						warnings = { "italic" },
-						information = { "italic" },
+			show_end_of_buffer = false,
+			transparent_bg = false,
+			lualine_bg_color = "#282A36",
+			italic_comment = true,
+
+			overrides = function(colors)
+				return {
+					FloatBorder = {
+						fg = colors.purple,
+						bg = colors.menu,
 					},
-					underlines = {
-						errors = { "underline" },
-						hints = { "underline" },
-						warnings = { "underline" },
-						information = { "underline" },
+					WinSeparator = {
+						fg = colors.selection,
 					},
-				},
-			},
+				}
+			end,
 		},
 
 		config = function(_, opts)
-			require("catppuccin").setup(opts)
-			vim.cmd.colorscheme("catppuccin")
+			require("dracula").setup(opts)
+			vim.cmd.colorscheme("dracula")
 		end,
 	},
 }
