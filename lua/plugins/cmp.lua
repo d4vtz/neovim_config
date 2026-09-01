@@ -1,120 +1,124 @@
 return {
-    {
-        "saghen/blink.cmp",
-        version = "1.*",
-        event = "InsertEnter",
+	{
+		"saghen/blink.cmp",
+		version = "1.*",
+		event = "InsertEnter",
 
-        dependencies = {
-            "rafamadriz/friendly-snippets",
-        },
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+		},
 
-        opts = {
-            keymap = {
-                preset = "none",
+		opts = {
+			enabled = function()
+				return not vim.b.bigfile
+			end,
 
-                ["<C-space>"] = {
-                    "show",
-                    "show_documentation",
-                    "hide_documentation",
-                },
+			keymap = {
+				preset = "none",
 
-                ["<C-e>"] = { "hide" },
+				["<C-space>"] = {
+					"show",
+					"show_documentation",
+					"hide_documentation",
+				},
 
-                ["<CR>"] = {
-                    "accept",
-                    "fallback",
-                },
+				["<C-e>"] = { "hide" },
 
-                ["<Tab>"] = {
-                    "select_next",
-                    "snippet_forward",
-                    "fallback",
-                },
+				["<CR>"] = {
+					"accept",
+					"fallback",
+				},
 
-                ["<S-Tab>"] = {
-                    "select_prev",
-                    "snippet_backward",
-                    "fallback",
-                },
+				["<Tab>"] = {
+					"select_next",
+					"snippet_forward",
+					"fallback",
+				},
 
-                ["<Up>"] = {
-                    "select_prev",
-                    "fallback",
-                },
+				["<S-Tab>"] = {
+					"select_prev",
+					"snippet_backward",
+					"fallback",
+				},
 
-                ["<Down>"] = {
-                    "select_next",
-                    "fallback",
-                },
+				["<Up>"] = {
+					"select_prev",
+					"fallback",
+				},
 
-                ["<C-k>"] = {
-                    "show_signature",
-                    "hide_signature",
-                    "fallback",
-                },
+				["<Down>"] = {
+					"select_next",
+					"fallback",
+				},
 
-                ["<C-b>"] = {
-                    "scroll_documentation_up",
-                    "fallback",
-                },
+				["<C-k>"] = {
+					"show_signature",
+					"hide_signature",
+					"fallback",
+				},
 
-                ["<C-f>"] = {
-                    "scroll_documentation_down",
-                    "fallback",
-                },
-            },
+				["<C-b>"] = {
+					"scroll_documentation_up",
+					"fallback",
+				},
 
-            appearance = {
-                nerd_font_variant = "mono",
-            },
+				["<C-f>"] = {
+					"scroll_documentation_down",
+					"fallback",
+				},
+			},
 
-            completion = {
-                list = {
-                    selection = {
-                        preselect = false,
-                        auto_insert = true,
-                    },
-                },
+			appearance = {
+				nerd_font_variant = "mono",
+			},
 
-                documentation = {
-                    auto_show = true,
-                    auto_show_delay_ms = 200,
-                },
+			completion = {
+				list = {
+					selection = {
+						preselect = false,
+						auto_insert = true,
+					},
+				},
 
-                ghost_text = {
-                    enabled = true,
-                },
+				documentation = {
+					auto_show = true,
+					auto_show_delay_ms = 200,
+				},
 
-                menu = {
-                    draw = {
-                        columns = {
-                            { "label", "label_description", gap = 1 },
-                            { "kind_icon", "kind" },
-                        },
-                    },
-                },
-            },
+				ghost_text = {
+					enabled = true,
+				},
 
-            sources = {
-                default = {
-                    "lsp",
-                    "path",
-                    "snippets",
-                    "buffer",
-                },
-            },
+				menu = {
+					draw = {
+						columns = {
+							{ "label", "label_description", gap = 1 },
+							{ "kind_icon", "kind" },
+						},
+					},
+				},
+			},
 
-            snippets = {
-                preset = "default",
-            },
+			sources = {
+				default = {
+					"lsp",
+					"path",
+					"snippets",
+					"buffer",
+				},
+			},
 
-            signature = {
-                enabled = true,
-            },
+			snippets = {
+				preset = "default",
+			},
 
-            fuzzy = {
-                implementation = "prefer_rust_with_warning",
-            },
-        },
-    },
+			signature = {
+				enabled = true,
+			},
+
+			fuzzy = {
+				implementation = "prefer_rust_with_warning",
+			},
+		},
+	},
 }
