@@ -12,7 +12,7 @@ return {
 				theme = "dracula-nvim",
 				globalstatus = true,
 				disabled_filetypes = {
-					statusline = { "dashboard", "alpha", "starter", "neo-tree" },
+					statusline = { "dashboard", "alpha", "starter", "snacks_dashboard", "neo-tree" },
 				},
 				component_separators = {
 					left = "│",
