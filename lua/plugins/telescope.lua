@@ -42,12 +42,28 @@ return {
 				"<cmd>Telescope oldfiles<CR>",
 				desc = "Archivos recientes",
 			},
+			{
+				"<leader>fw",
+				"<cmd>Telescope grep_string<CR>",
+				desc = "Buscar palabra bajo el cursor",
+			},
+			{
+				"<leader>fd",
+				"<cmd>Telescope diagnostics<CR>",
+				desc = "Buscar diagnósticos",
+			},
+			{
+				"<leader>fR",
+				"<cmd>Telescope resume<CR>",
+				desc = "Reanudar última búsqueda",
+			},
 		},
 
 		opts = {
 			defaults = {
 				prompt_prefix = "  ",
 				selection_caret = "➜ ",
+				path_display = { "smart" },
 
 				sorting_strategy = "ascending",
 
@@ -62,7 +78,7 @@ return {
 				},
 
 				file_ignore_patterns = {
-					".git/",
+					"%.git/",
 					"node_modules/",
 				},
 			},
