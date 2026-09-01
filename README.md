@@ -13,6 +13,9 @@ Configuración personal de Neovim, modular y administrada con
 - Integración con Git mediante Gitsigns.
 - Soporte configurado para Lua, Python, C, C++, Bash y LaTeX.
 - Modo ligero automático para archivos mayores de 2 MiB.
+- Dashboard Dracula inspirado en Gargantua.
+- Autopairs, detección de indentación y textobjects de Treesitter.
+- Resaltado visual de valores de color.
 
 ## Instalación
 
@@ -83,6 +86,12 @@ consultar los grupos disponibles.
 | `<leader>ds` | Buscar símbolos del documento |
 | `<leader>dS` | Buscar símbolos del workspace |
 | `<leader>dt` | Buscar definiciones de tipo |
+| `af` / `if` | Seleccionar función exterior / interior |
+| `ac` / `ic` | Seleccionar clase exterior / interior |
+| `aa` / `ia` | Seleccionar argumento exterior / interior |
+| `]f` / `[f` | Función siguiente / anterior |
+| `]F` / `[F` | Clase siguiente / anterior |
+| `<leader>sn` / `<leader>sp` | Intercambiar argumentos |
 | `<leader>xx` | Mostrar diagnósticos |
 | `<leader>xX` | Mostrar diagnósticos del buffer actual |
 | `<leader>xe` | Mostrar solamente errores |
@@ -125,6 +134,7 @@ consultar los grupos disponibles.
 - `:MasonToolsUpdate`: actualizar las herramientas declaradas.
 - `:TSUpdate`: actualizar los parsers de Treesitter.
 - `:ConformInfo`: inspeccionar los formateadores disponibles.
+- `:HighlightColors Toggle`: activar o desactivar el resaltado de colores.
 - `:TrimWhitespace`: eliminar espacios al final de las líneas del buffer.
 - `:ReloadConfig`: recargar parcialmente los módulos principales.
 
