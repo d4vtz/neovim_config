@@ -78,6 +78,10 @@ consultar los grupos disponibles.
 | `<leader>bl` | Cerrar buffers a la izquierda |
 | `<leader>nd` | Descartar notificaciones |
 | `<leader>nh` | Abrir el historial de notificaciones |
+| `<leader>qs` | Restaurar la sesión del directorio actual |
+| `<leader>qS` | Seleccionar una sesión guardada |
+| `<leader>ql` | Restaurar la última sesión |
+| `<leader>qd` | Desactivar el guardado de la sesión actual |
 
 ## Mantenimiento
 
