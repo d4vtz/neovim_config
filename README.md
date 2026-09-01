@@ -62,6 +62,9 @@ consultar los grupos disponibles.
 |---|---|
 | `<leader>ff` | Buscar archivos |
 | `<leader>fg` | Buscar texto |
+| `<leader>fw` | Buscar la palabra bajo el cursor |
+| `<leader>fd` | Buscar diagnósticos |
+| `<leader>fR` | Reanudar la última búsqueda |
 | `<leader>e` | Abrir o cerrar Neo-tree |
 | `<leader>cf` | Formatear el buffer |
 | `<leader>xx` | Mostrar diagnósticos |
