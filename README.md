@@ -66,6 +66,7 @@ consultar los grupos disponibles.
 | `<leader>fd` | Buscar diagnósticos |
 | `<leader>fR` | Reanudar la última búsqueda |
 | `<leader>e` | Abrir o cerrar Neo-tree |
+| `<leader>er` | Revelar el archivo actual en Neo-tree |
 | `<leader>cf` | Formatear el buffer |
 | `<leader>xx` | Mostrar diagnósticos |
 | `<C-\\>` | Abrir una terminal flotante |
