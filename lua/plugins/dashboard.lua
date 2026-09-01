@@ -40,6 +40,30 @@ local quotes = {
 		text = "La ciencia es una forma de pensar, mucho más que un cuerpo de conocimientos.",
 		author = "Carl Sagan",
 	},
+	{
+		text = "Hablar es barato. Muéstrame el código.",
+		author = "Linus Torvalds",
+	},
+	{
+		text = "La simplicidad es un requisito previo para la fiabilidad.",
+		author = "Edsger W. Dijkstra",
+	},
+	{
+		text = "Primero resuelve el problema. Después escribe el código.",
+		author = "John Johnson",
+	},
+	{
+		text = "Los buenos programadores escriben código que las personas pueden entender.",
+		author = "Martin Fowler",
+	},
+	{
+		text = "Los programas deben escribirse para que las personas los lean.",
+		author = "Harold Abelson",
+	},
+	{
+		text = "La depuración es como ser detective en una película donde también eres el culpable.",
+		author = "Filipe Fortes",
+	},
 }
 
 local function quote_section()
@@ -55,7 +79,7 @@ local function quote_section()
 					align = "center",
 				},
 			},
-			padding = { 2, 0 },
+			padding = { 3, 0 },
 		},
 		{
 			text = {
