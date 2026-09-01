@@ -11,9 +11,11 @@ Configuración personal de Neovim, modular y administrada con
 - Resaltado y análisis sintáctico con Treesitter.
 - Formato con Conform y análisis de Python mediante Ruff LSP.
 - Integración con Git mediante Gitsigns.
+- Depuración de Python y C/C++ mediante DAP.
+- Ejecución y depuración de pruebas Python mediante Neotest y Pytest.
 - Soporte configurado para Lua, Python, C, C++, Bash y LaTeX.
 - Modo ligero automático para archivos mayores de 2 MiB.
-- Dashboard Dracula inspirado en Gargantua.
+- Dashboard Dracula con citas de ciencia, docencia y programación.
 - Autopairs, detección de indentación y textobjects de Treesitter.
 - Resaltado visual de valores de color.
 
@@ -50,6 +52,13 @@ Linters instalados automáticamente mediante Mason:
 
 - Bash y shell: `shellcheck`
 - LaTeX: `chktex`
+
+Adaptadores de depuración instalados automáticamente mediante Mason:
+
+- Python: `debugpy`
+- C y C++: `codelldb`
+
+Las pruebas Python requieren `pytest` dentro del entorno del proyecto. En proyectos administrados con `uv`, instálalo con `uv add --dev pytest`.
 
 LaTeX utiliza el `latexindent` proporcionado por TeX Live. También requiere `latexmk` para compilar y `zathura` para la búsqueda inversa. Los servidores de lenguaje y el resto de los formateadores se administran desde `:Mason`.
 
@@ -110,6 +119,19 @@ consultar los grupos disponibles.
 | `<leader>bo` | Cerrar los demás buffers |
 | `<leader>br` | Cerrar buffers a la derecha |
 | `<leader>bl` | Cerrar buffers a la izquierda |
+| `<F5>` | Iniciar o continuar la depuración |
+| `<F10>` / `<F11>` / `<F12>` | Paso sobre / dentro / fuera |
+| `<leader>Db` | Alternar breakpoint |
+| `<leader>DB` | Crear breakpoint condicional |
+| `<leader>Dc` | Ejecutar hasta el cursor |
+| `<leader>Du` | Alternar la interfaz de depuración |
+| `<leader>Dt` | Terminar la depuración |
+| `<leader>pn` | Ejecutar la prueba cercana |
+| `<leader>pf` | Ejecutar el archivo de pruebas |
+| `<leader>pa` | Ejecutar todas las pruebas |
+| `<leader>pd` | Depurar la prueba cercana |
+| `<leader>ps` | Alternar el resumen de pruebas |
+| `<leader>po` | Mostrar la salida de la prueba |
 | `<leader>nd` | Descartar notificaciones |
 | `<leader>nh` | Abrir el historial de notificaciones |
 | `<leader>qs` | Restaurar la sesión del directorio actual |
