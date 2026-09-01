@@ -71,6 +71,11 @@ consultar los grupos disponibles.
 | `<leader>xx` | Mostrar diagnósticos |
 | `<C-\\>` | Abrir una terminal flotante |
 | `<S-h>` / `<S-l>` | Buffer anterior / siguiente |
+| `<leader>bp` | Elegir un buffer |
+| `<leader>bd` | Cerrar el buffer actual |
+| `<leader>bo` | Cerrar los demás buffers |
+| `<leader>br` | Cerrar buffers a la derecha |
+| `<leader>bl` | Cerrar buffers a la izquierda |
 
 ## Mantenimiento
 
