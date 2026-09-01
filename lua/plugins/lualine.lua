@@ -11,6 +11,9 @@ return {
 			options = {
 				theme = "auto",
 				globalstatus = true,
+				disabled_filetypes = {
+					statusline = { "dashboard", "alpha", "starter", "neo-tree" },
+				},
 				component_separators = {
 					left = "│",
 					right = "│",
@@ -36,12 +39,46 @@ return {
 					{
 						"filename",
 						path = 1,
+						symbols = {
+							modified = " ●",
+							readonly = " ",
+							unnamed = "[Sin nombre]",
+							newfile = "[Nuevo]",
+						},
 					},
 				},
 
 				lualine_x = {
-					"encoding",
-					"fileformat",
+					{
+						function()
+							local clients = vim.lsp.get_clients({ bufnr = 0 })
+							if #clients == 0 then
+								return ""
+							end
+
+							local names = {}
+							for _, client in ipairs(clients) do
+								names[#names + 1] = client.name
+							end
+
+							return "  " .. table.concat(names, ", ")
+						end,
+						cond = function()
+							return vim.bo.filetype ~= ""
+						end,
+					},
+					{
+						"encoding",
+						cond = function()
+							return vim.bo.fileencoding ~= "" and vim.bo.fileencoding ~= "utf-8"
+						end,
+					},
+					{
+						"fileformat",
+						cond = function()
+							return vim.bo.fileformat ~= "unix"
+						end,
+					},
 					"filetype",
 				},
 
