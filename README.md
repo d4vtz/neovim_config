@@ -65,9 +65,15 @@ consultar los grupos disponibles.
 | `<leader>fw` | Buscar la palabra bajo el cursor |
 | `<leader>fd` | Buscar diagnósticos |
 | `<leader>fR` | Reanudar la última búsqueda |
-| `<leader>e` | Abrir o cerrar Neo-tree |
+| `<leader>ee` | Abrir o cerrar Neo-tree |
 | `<leader>er` | Revelar el archivo actual en Neo-tree |
 | `<leader>cf` | Formatear el buffer |
+| `<leader>w` | Guardar el archivo |
+| `<leader>qq` | Salir |
+| `<leader>qw` | Guardar y salir |
+| `<leader>ds` | Buscar símbolos del documento |
+| `<leader>dS` | Buscar símbolos del workspace |
+| `<leader>dt` | Buscar definiciones de tipo |
 | `<leader>xx` | Mostrar diagnósticos |
 | `<leader>xX` | Mostrar diagnósticos del buffer actual |
 | `<leader>xe` | Mostrar solamente errores |
