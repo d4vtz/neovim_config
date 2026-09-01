@@ -22,6 +22,7 @@ return {
 					},
 					SnacksDashboardHeader = {
 						fg = colors.purple,
+						bold = true,
 					},
 					SnacksDashboardIcon = {
 						fg = colors.cyan,
@@ -44,7 +45,8 @@ return {
 						bold = true,
 					},
 					SnacksDashboardFooter = {
-						fg = colors.comment,
+						fg = colors.orange,
+						italic = true,
 					},
 				}
 			end,
