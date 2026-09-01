@@ -32,6 +32,17 @@ return {
 					SnacksDashboardDesc = {
 						fg = colors.fg,
 					},
+					SnacksDashboardDir = {
+						fg = colors.cyan,
+					},
+					SnacksDashboardFile = {
+						fg = colors.fg,
+						bold = true,
+					},
+					SnacksDashboardTitle = {
+						fg = colors.cyan,
+						bold = true,
+					},
 					SnacksDashboardFooter = {
 						fg = colors.comment,
 					},
