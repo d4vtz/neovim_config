@@ -13,6 +13,10 @@ return {
 
 		init = function()
 			vim.defer_fn(function()
+				if #vim.api.nvim_list_uis() == 0 then
+					return
+				end
+
 				require("lazy").load({
 					plugins = {
 						"mason-tool-installer.nvim",
@@ -27,8 +31,13 @@ return {
 
 		opts = {
 			ensure_installed = {
-				"stylua",
+				"lua-language-server",
+				"basedpyright",
 				"ruff",
+				"clangd",
+				"bash-language-server",
+				"texlab",
+				"stylua",
 				"clang-format",
 				"shellcheck",
 				"chktex",
@@ -37,7 +46,7 @@ return {
 			auto_update = false,
 			run_on_start = true,
 			start_delay = 0,
-			debounce_hours = 24,
+			debounce_hours = 168,
 
 			integrations = {
 				["mason-lspconfig"] = false,
