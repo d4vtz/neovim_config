@@ -82,6 +82,15 @@ consultar los grupos disponibles.
 | `<leader>qS` | Seleccionar una sesión guardada |
 | `<leader>ql` | Restaurar la última sesión |
 | `<leader>qd` | Desactivar el guardado de la sesión actual |
+| `]h` / `[h` | Hunk siguiente / anterior |
+| `<leader>hs` | Añadir el hunk al stage |
+| `<leader>hu` | Deshacer el stage del hunk |
+| `<leader>hr` | Descartar el hunk con confirmación |
+| `<leader>hp` | Previsualizar el hunk |
+| `<leader>hb` | Mostrar blame de la línea |
+| `<leader>hB` | Alternar blame permanente |
+| `<leader>ht` | Alternar líneas eliminadas |
+| `<leader>hd` / `<leader>hD` | Diff contra índice / HEAD |
 
 ## Mantenimiento
 
