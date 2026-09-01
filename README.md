@@ -34,7 +34,7 @@ Dependencias generales:
 - `make`, para compilar `telescope-fzf-native`
 - `tree-sitter-cli` 0.26.1 o posterior
 - un compilador de C para los parsers de Treesitter
-- una Nerd Font
+- una Nerd Font 3.3 o posterior
 - `ripgrep` y `fd`, recomendados para Telescope
 
 Formateadores instalados automáticamente mediante Mason:
