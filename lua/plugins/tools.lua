@@ -41,6 +41,8 @@ return {
 				"clang-format",
 				"shellcheck",
 				"chktex",
+				"debugpy",
+				"codelldb",
 			},
 
 			auto_update = false,
