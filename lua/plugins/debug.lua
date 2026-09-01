@@ -1,7 +1,3 @@
-local function executable(path)
-	return vim.fn.executable(path) == 1
-end
-
 return {
 	{
 		"mfussenegger/nvim-dap",
@@ -88,24 +84,18 @@ return {
 			local debugpy_python = mason .. "/debugpy/venv/bin/python"
 			local debugpy_adapter = vim.fn.stdpath("data") .. "/mason/bin/debugpy-adapter"
 
-			if executable(debugpy_python) then
+			if vim.fn.executable(debugpy_python) == 1 then
 				require("dap-python").setup(debugpy_python)
-			elseif executable(debugpy_adapter) then
-				require("dap-python").setup(debugpy_adapter)
 			else
-				vim.notify(
-					"debugpy no está instalado. Ejecuta :MasonToolsInstall",
-					vim.log.levels.WARN
-				)
+				require("dap-python").setup(debugpy_adapter)
 			end
 
 			local codelldb = mason .. "/codelldb/extension/adapter/codelldb"
-			if not executable(codelldb) then
+			if vim.fn.executable(codelldb) ~= 1 then
 				codelldb = vim.fn.stdpath("data") .. "/mason/bin/codelldb"
 			end
 
-			if executable(codelldb) then
-				dap.adapters.codelldb = {
+			dap.adapters.codelldb = {
 					type = "server",
 					port = "${port}",
 					executable = {
@@ -138,14 +128,8 @@ return {
 					},
 				}
 
-				dap.configurations.c = configurations
-				dap.configurations.cpp = configurations
-			else
-				vim.notify(
-					"codelldb no está instalado. Ejecuta :MasonToolsInstall",
-					vim.log.levels.WARN
-				)
-			end
+			dap.configurations.c = configurations
+			dap.configurations.cpp = configurations
 		end,
 	},
 }
