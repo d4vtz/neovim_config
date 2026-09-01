@@ -53,6 +53,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	group = lsp_group,
 
 	callback = function(event)
+		if vim.b[event.buf].bigfile then
+			vim.schedule(function()
+				vim.lsp.buf_detach_client(event.buf, event.data.client_id)
+			end)
+			return
+		end
+
 		local function lsp_map(lhs, rhs, desc)
 			vim.keymap.set("n", lhs, rhs, {
 				buffer = event.buf,
