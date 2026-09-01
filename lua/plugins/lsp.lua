@@ -7,6 +7,8 @@ return {
 
 	{
 		"mason-org/mason-lspconfig.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+
 		dependencies = {
 			"mason-org/mason.nvim",
 			"neovim/nvim-lspconfig",
@@ -26,6 +28,7 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
 
 		config = function()
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
