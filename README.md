@@ -70,6 +70,10 @@ consultar los grupos disponibles.
 | `<leader>cf` | Formatear el buffer |
 | `<leader>xx` | Mostrar diagnósticos |
 | `<C-\\>` | Abrir una terminal flotante |
+| `<leader>th` | Abrir una terminal horizontal |
+| `<leader>tv` | Abrir una terminal vertical |
+| `<leader>ts` | Seleccionar una terminal |
+| `<leader>ta` | Mostrar u ocultar todas las terminales |
 | `<S-h>` / `<S-l>` | Buffer anterior / siguiente |
 | `<leader>bp` | Elegir un buffer |
 | `<leader>bd` | Cerrar el buffer actual |
