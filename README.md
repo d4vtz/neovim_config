@@ -12,6 +12,7 @@ Configuración personal de Neovim, modular y administrada con
 - Formato con Conform y análisis de Python mediante Ruff LSP.
 - Integración con Git mediante Gitsigns.
 - Soporte configurado para Lua, Python, C, C++, Bash y LaTeX.
+- Modo ligero automático para archivos mayores de 2 MiB.
 
 ## Instalación
 
@@ -122,6 +123,7 @@ consultar los grupos disponibles.
 - `:MasonToolsUpdate`: actualizar las herramientas declaradas.
 - `:TSUpdate`: actualizar los parsers de Treesitter.
 - `:ConformInfo`: inspeccionar los formateadores disponibles.
+- `:TrimWhitespace`: eliminar espacios al final de las líneas del buffer.
 - `:ReloadConfig`: recargar parcialmente los módulos principales.
 
 `ReloadConfig` no equivale a reiniciar Neovim: un atajo eliminado puede seguir
